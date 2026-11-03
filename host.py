@@ -13,7 +13,10 @@ load_dotenv()
 
 class ChatHost:
     def __init__(self):
-        self.mcp_clients: list[MCPClient] = [MCPClient("./weather_USA.py")]
+        self.mcp_clients: list[MCPClient] = [
+            MCPClient("./weather_USA.py"),
+            MCPClient("./weather_Israel.py"),
+        ]
         self.tool_clients: dict[str, tuple[MCPClient, str]] = {}
         self.clients_connected = False
         self.exit_stack = AsyncExitStack()
